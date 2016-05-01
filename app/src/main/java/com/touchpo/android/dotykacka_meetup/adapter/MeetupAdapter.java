@@ -1,4 +1,4 @@
-package com.touchpo.android.meetup.adapter;
+package com.touchpo.android.dotykacka_meetup.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

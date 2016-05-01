@@ -1,4 +1,4 @@
-package com.touchpo.android.meetup.activity;
+package com.touchpo.android.dotykacka_meetup.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,8 +7,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.touchpo.android.dotykacka_meetup.R;
-import com.touchpo.android.meetup.adapter.MeetupAdapter;
-import com.touchpo.android.meetup.adapter.MeetupAdapter.MeetupTopic;
+import com.touchpo.android.dotykacka_meetup.adapter.MeetupAdapter;
+import com.touchpo.android.dotykacka_meetup.adapter.MeetupAdapter.MeetupTopic;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

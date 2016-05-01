@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.touchpo.android.meetup.activity.MainActivity">
+    tools:context="com.touchpo.android.dotykacka_meetup.activity.MainActivity">
 
     <android.support.v7.widget.RecyclerView
         android:id="@android:id/list"
