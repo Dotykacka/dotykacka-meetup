@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.touchpo.android.dotykacka_meetup.R;
+import com.touchpo.android.dotykacka_meetup.activity.ContentProviderActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,12 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.ViewHolder
     public MeetupAdapter(Context context) {
         mContext = context;
         mList = new ArrayList<>();
+
+        mList.add(new MeetupTopic(
+                mContext.getString(R.string.meetup_content_provider_title),
+                mContext.getString(R.string.meetup_content_provider_description),
+                ContentProviderActivity.class
+        ));
     }
 
     @Override
