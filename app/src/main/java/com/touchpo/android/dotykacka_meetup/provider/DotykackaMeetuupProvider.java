@@ -58,14 +58,21 @@ public class DotykackaMeetuupProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
 
         // TODO: 02.05.16 Return Cursor for specified data
+        Cursor cursor;
         switch (sUriMatcher.match(uri)) {
             case 1:
-                return getMockCursor(2);
+                cursor = getMockCursor(2);
+                break;
             case 2:
-                return getMockCursor(1);
+                cursor = getMockCursor(1);
+                break;
             default:
                 throw new IllegalArgumentException("Invalid URI");
         }
+        if (getContext() != null) {
+            cursor.setNotificationUri(getContext().getContentResolver(), uri);
+        }
+        return cursor;
     }
 
     @Nullable
