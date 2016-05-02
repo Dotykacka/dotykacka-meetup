@@ -11,6 +11,7 @@ import com.touchpo.android.dotykacka_meetup.R;
 import com.touchpo.android.dotykacka_meetup.activity.ContentProviderActivity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import butterknife.BindView;
@@ -40,6 +41,8 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.ViewHolder
                 mContext.getString(R.string.meetup_content_provider_description),
                 ContentProviderActivity.class
         ));
+
+        Collections.reverse(mList);
     }
 
     @Override
