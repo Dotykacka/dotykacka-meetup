@@ -31,6 +31,11 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.ViewHolder
         mList = new ArrayList<>();
 
         mList.add(new MeetupTopic(
+                mContext.getString(R.string.meetup_example_title),
+                mContext.getString(R.string.meetup_example_desc),
+                null
+        ));
+        mList.add(new MeetupTopic(
                 mContext.getString(R.string.meetup_content_provider_title),
                 mContext.getString(R.string.meetup_content_provider_description),
                 ContentProviderActivity.class
