@@ -2,4 +2,6 @@
     <string name="app_name">dotykacka-meetup</string>
     <string name="meetup_content_provider_title">Content provider</string>
     <string name="meetup_content_provider_description">A provider is part of an Android application, which often provides its own UI for working with the data.</string>
+    <string name="meetup_example_title">Example Title</string>
+    <string name="meetup_example_desc">Example Description</string>
 </resources>

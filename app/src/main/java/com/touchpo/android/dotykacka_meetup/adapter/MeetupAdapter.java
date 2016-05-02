@@ -28,6 +28,12 @@ public class MeetupAdapter extends RecyclerView.Adapter<MeetupAdapter.ViewHolder
     public MeetupAdapter(Context context) {
         mContext = context;
         mList = new ArrayList<>();
+
+        mList.add(new MeetupTopic(
+                mContext.getString(R.string.meetup_example_title),
+                mContext.getString(R.string.meetup_example_desc),
+                null
+        ));
     }
 
     @Override

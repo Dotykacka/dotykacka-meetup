@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements MeetupAdapter.Mee
     @Override
     public void onClickListener(int position) {
         MeetupTopic topic =  mAdapter.getMeetupTopic(position);
-        startActivity(new Intent(this, topic.activityClass));
+        if (topic.activityClass != null) {
+            startActivity(new Intent(this, topic.activityClass));
+        }
     }
 }
