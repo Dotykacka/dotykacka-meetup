@@ -11,10 +11,11 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import static com.touchpo.android.dotykacka_meetup.provider.MeetupContract.EmployeeColumns.COL_EMPLOYEE;
-import static com.touchpo.android.dotykacka_meetup.provider.MeetupContract.EmployeeColumns.COL_ID;
-import static com.touchpo.android.dotykacka_meetup.provider.MeetupContract.EmployeeColumns.COL_POSITION;
-import static com.touchpo.android.dotykacka_meetup.provider.MeetupContract.EmployeeColumns.getAll;
+import static com.touchpo.android.dotykacka_meetup.provider.DotykackaMeetupContract.Employee.EmployeeColumns.COL_EMPLOYEE;
+import static com.touchpo.android.dotykacka_meetup.provider.DotykackaMeetupContract.Employee.EmployeeColumns.COL_ID;
+import static com.touchpo.android.dotykacka_meetup.provider.DotykackaMeetupContract.Employee.EmployeeColumns.COL_ROLE;
+import static com.touchpo.android.dotykacka_meetup.provider.DotykackaMeetupContract.Employee.EmployeeColumns.getAll;
+import static com.touchpo.android.dotykacka_meetup.provider.DotykackaMeetupContract.Employee.TAB_NAME;
 
 /**
  * @author kocopepo
@@ -23,7 +24,7 @@ import static com.touchpo.android.dotykacka_meetup.provider.MeetupContract.Emplo
 public class DotykackaMeetupProvider extends ContentProvider {
 
     public static final String TAG = DotykackaMeetupProvider.class.getSimpleName();
-    public static final String AUTHORITY = MeetupContract.AUTHORITY;
+    public static final String AUTHORITY = DotykackaMeetupContract.AUTHORITY;
 
     // Creates a UriMatcher object.
     private static final UriMatcher sUriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
@@ -41,14 +42,14 @@ public class DotykackaMeetupProvider extends ContentProvider {
          * Sets the integer value for multiple rows in table employee to 1. Notice that no wildcard is used
          * in the path
          */
-        sUriMatcher.addURI(AUTHORITY, MeetupContract.TAB_EMPLOYEE, 1);
+        sUriMatcher.addURI(AUTHORITY, TAB_NAME, 1);
 
         /*
          * Sets the code for a single row to 2. In this case, the "#" wildcard is
          * used. "content://com.touchpo.android.dotykacka_meetup.provider/employee/3" matches, but
          * "content://com.touchpo.android.dotykacka_meetup.provider/employee doesn't.
          */
-        sUriMatcher.addURI(AUTHORITY, MeetupContract.TAB_EMPLOYEE + "/#", 2);
+        sUriMatcher.addURI(AUTHORITY, TAB_NAME + "/#", 2);
 
         return true;
     }
@@ -83,9 +84,9 @@ public class DotykackaMeetupProvider extends ContentProvider {
 
         switch (sUriMatcher.match(uri)) {
             case 1:
-                return "vnd." + AUTHORITY + ".dir/vnd." + AUTHORITY+ "." + MeetupContract.TAB_EMPLOYEE;
+                return "vnd." + AUTHORITY + ".dir/vnd." + AUTHORITY+ "." + TAB_NAME;
             case 2:
-                return "vnd." + AUTHORITY + ".item/vnd." + AUTHORITY+ "." + MeetupContract.TAB_EMPLOYEE;
+                return "vnd." + AUTHORITY + ".item/vnd." + AUTHORITY+ "." + TAB_NAME;
             default:
                 return null;
         }
@@ -122,7 +123,7 @@ public class DotykackaMeetupProvider extends ContentProvider {
                 cursor.newRow()
                         .add(COL_ID, i)
                         .add(COL_EMPLOYEE, "Alois Smolik")
-                        .add(COL_POSITION, "support specialist");
+                        .add(COL_ROLE, "support specialist");
             }
         }
         return cursor;
