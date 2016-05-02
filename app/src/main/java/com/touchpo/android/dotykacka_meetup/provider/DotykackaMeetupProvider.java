@@ -20,9 +20,9 @@ import static com.touchpo.android.dotykacka_meetup.provider.MeetupContract.Emplo
  * @author kocopepo
  *         created on 02.05.16
  */
-public class DotykackaMeetuupProvider extends ContentProvider {
+public class DotykackaMeetupProvider extends ContentProvider {
 
-    public static final String TAG = DotykackaMeetuupProvider.class.getSimpleName();
+    public static final String TAG = DotykackaMeetupProvider.class.getSimpleName();
     public static final String AUTHORITY = MeetupContract.AUTHORITY;
 
     // Creates a UriMatcher object.
