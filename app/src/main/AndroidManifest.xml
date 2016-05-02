@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.touchpo.android.dotykacka_meetup">
 
+    <!-- In other app you should use such a permission to access this app's data
+    <uses-permission android:name="com.touchpo.android.dotykacka_meetup.provider.permission.READ" />
+    -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
