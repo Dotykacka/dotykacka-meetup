@@ -12,12 +12,30 @@
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ContentProviderActivity"/>
+        <activity android:name=".activity.ContentProviderActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        
+        <provider
+            android:authorities="com.touchpo.android.dotykacka_meetup.provider"
+            android:name=".provider.DotykackaMeetupProvider"
+            android:readPermission="com.touchpo.android.dotykacka_meetup.provider.permission.READ"
+            android:writePermission="com.touchpo.android.dotykacka_meetup.provider.permission.WRITE">
+
+            <!-- Also possible to specify access for each table
+            <path-permission
+                android:path="employee"
+                android:readPermission="com.touchpo.android.dotykacka_meetup.provider.employee.permission.READ"
+            />
+            -->
+        </provider>
         
     </application>
 
