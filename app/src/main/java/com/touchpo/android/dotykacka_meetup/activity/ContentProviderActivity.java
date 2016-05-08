@@ -27,6 +27,8 @@ public class ContentProviderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content_provider);
         ButterKnife.bind(this);
+
+        /* Instead of AsyncTask you can use CursorLoader */
         LoadEmployeesTask loadTask = new LoadEmployeesTask(this);
         loadTask.execute();
     }
@@ -41,9 +43,10 @@ public class ContentProviderActivity extends AppCompatActivity {
 
         @Override
         protected Cursor doInBackground(Void... params) {
+            /* You must not load cursor in Main UI thread!! */
+
             ContentResolver resolver = getContentResolver();
-            Cursor cursor = resolver.query(Uri.parse(Employee.CONTENT_URI), null, null, null, null);
-            return cursor;
+            return resolver.query(Uri.parse(Employee.CONTENT_URI), null, null, null, null);
         }
 
         @Override
@@ -52,6 +55,10 @@ public class ContentProviderActivity extends AppCompatActivity {
             if (cursor != null && cursor.moveToFirst() && cursor.getCount() > 0) {
                 mEmployeeName.setText(cursor.getString(cursor.getColumnIndex(Employee.EmployeeColumns.COL_EMPLOYEE)));
                 mEmployeeRole.setText(cursor.getString(cursor.getColumnIndex(Employee.EmployeeColumns.COL_ROLE)));
+            }
+            if (cursor != null) {
+                /* Don't forget to close the cursor! */
+                cursor.close();
             }
         }
     }
