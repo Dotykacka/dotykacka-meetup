@@ -6,6 +6,19 @@
     <uses-permission android:name="com.touchpo.android.dotykacka_meetup.provider.permission.READ" />
     -->
 
+    <permission
+        android:name="com.touchpo.android.dotykacka_meetup.provider.permission.READ"
+        android:label="@string/permission_provider_read"
+        android:description="@string/permission_provider_read"
+        android:icon="@drawable/ic_insert_drive_file_white_24px"
+        />
+
+    <permission
+        android:name="com.touchpo.android.dotykacka_meetup.provider.permission.WRITE"
+        android:label="@string/permission_provider_write"
+        android:description="@string/permission_provider_write"
+        android:icon="@drawable/ic_insert_drive_file_white_24px"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
