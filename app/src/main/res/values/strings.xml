@@ -6,4 +6,7 @@
     <string name="meetup_example_desc">Example Description</string>
     <string name="permission_provider_read">Access to read app\'s database.</string>
     <string name="permission_provider_write">Access to update, insert and delete data in app\'s database.</string>
+    <string name="employee_name_hint">Employee\'s name</string>
+    <string name="employee_role_hint">Employee\'s role</string>
+    <string name="employee_add">Add</string>
 </resources>
